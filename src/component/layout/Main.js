@@ -55,7 +55,7 @@ export default class Main extends Component {
           query={this.state.query}
         />
         {this.state.showList && (
-          <div>
+          <div style={{ marginTop: "10px" }}>
             <h6>{this.state.total_results} movies found</h6>
             <Movies movies={this.state.movies} />
           </div>

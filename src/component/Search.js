@@ -8,17 +8,27 @@ export default class Search extends Component {
   setStyleForSearchbox = () => {
     return this.props.query ? { marginTop: "10px" } : {};
   };
+  setStyleForSearchLogo = () => {
+    return this.props.query ? { display: "none" } : {};
+  };
   render() {
     return (
-      <div className="search-section">
-        <input
-          className="search-box"
-          type="text"
-          placeholder="Search a movie"
-          value={this.props.query}
-          onChange={this.props.handleSearchChange}
-          style={this.setStyleForSearchbox()}
+      <div className="search-section" style={this.setStyleForSearchbox()}>
+        <img
+          className="logo"
+          style={this.setStyleForSearchLogo()}
+          src="/img/brand512.svg"
+          alt="logo"
         />
+        <div className="search-box">
+          <i className="fa fa-search search-icon"></i>
+          <input
+            type="text"
+            placeholder="Search a movie"
+            value={this.props.query}
+            onChange={this.props.handleSearchChange}
+          />
+        </div>
       </div>
     );
   }

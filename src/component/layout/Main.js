@@ -14,12 +14,9 @@ export default class Main extends Component {
     };
   }
   fetchMoviesFromServer = async (query) => {
-    const res = await Axios.get("https://api.themoviedb.org/3/search/movie", {
-      params: {
-        api_key: "f591d9d248bed29b18342a63fde2ada7",
-        query: query,
-      },
-    });
+    const res = await Axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}`
+    );
     console.log(res.data);
     this.setState({
       movies: res.data.results,

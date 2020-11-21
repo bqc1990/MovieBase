@@ -6,6 +6,8 @@ import MovieDetail from "./component/MovieDetail";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+require("dotenv").config();
+
 function App(props) {
   return (
     <div>

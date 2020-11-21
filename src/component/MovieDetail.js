@@ -26,7 +26,8 @@ export default class MovieDetail extends Component {
     Axios.get(
       "https://api.themoviedb.org/3/movie/" +
         this.state.movie_id +
-        "?api_key=f591d9d248bed29b18342a63fde2ada7"
+        "?api_key=" +
+        process.env.REACT_APP_API_KEY
     )
       .then((res) => {
         // console.log("fetch data successfully", res.data);

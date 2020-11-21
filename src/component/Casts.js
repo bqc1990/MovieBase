@@ -14,7 +14,8 @@ export default class Casts extends Component {
     Axios.get(
       "https://api.themoviedb.org/3/movie/" +
         this.props.movie_id +
-        "/credits?api_key=f591d9d248bed29b18342a63fde2ada7"
+        "/credits?api_key=" +
+        process.env.REACT_APP_API_KEY
     )
       .then((res) => {
         this.setState({
